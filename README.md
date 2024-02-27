@@ -1,12 +1,12 @@
-**README**
+# Basic Web App: United Squad Data
 
-Hey there! This README gives you a peek into the decisions behind this football player data web app, the challenges tackled, and how I tested everything to make sure it runs smoothly.
+Welcome to the United Squad Data Web Application README! Here, you'll find insights into the decisions made during the development process, challenges overcome, and details on how to use and test the application.
 
-**Design Choices:**
+## Design Choices:
 
-For this assignment, I chose to build a simple web application centered around the Manchester United squad, focusing on player data. 
+For this super mini project, I decided to create a simple web application focusing on the Manchester United squad, showcasing player data.
 
-1. **JSON Data Creation:** I created a JSON file named `data.json` containing player data for at least 10 Manchester United squad members. Each entry includes properties such as name, jersey number, and position.
+1. **JSON Data Creation:** To populate the application with data, I created a JSON file named `data.json` containing details of at least 10 Manchester United squad members. Each entry includes properties such as name, jersey number, and position.
 
 2. **Web API Introduction & Implementation:** 
    - I developed a basic RESTful API using Node.js and Express to serve the JSON data. The API includes two endpoints: `/api/data` to retrieve all player entries and `/api/data/:id` to retrieve a single player entry by ID.
@@ -18,10 +18,13 @@ For this assignment, I chose to build a simple web application centered around t
    - Enhanced the user interface with CSS to improve presentation and styling.
    - Implemented error handling in AJAX calls to manage scenarios such as non-existent IDs or server issues.
 
-**Challenges Faced:**
+## Challenges Faced:
 
 One challenge I encountered was with the `loadDataByJerseyNo` function initially not working as expected. The issue was resolved by ensuring proper handling of the response data and addressing any errors that occurred during the AJAX call. Debugging techniques such as console logging and examining network requests helped identify and resolve the issue.
 
-**Testing:**
+## Testing:
 
 To test the application, I first ensured that the Node.js server was running and that the API endpoints were accessible. I then tested the functionality of fetching all data and retrieving specific player entries using both valid and invalid IDs. Additionally, I tested error handling scenarios to ensure that appropriate messages were displayed to the user in case of errors. Finally, I checked the responsiveness and styling of the HTML page to ensure a smooth user experience.
+
+## Usage:
+To use the application, simply clone the repository and ensure you have Node.js installed on your machine. Then, run `npm install` to install the necessary dependencies. Next, start the server using `npm start` and navigate to the provided URL in your browser to access the application. From there, you can interact with the buttons and input field to fetch and display player data.
