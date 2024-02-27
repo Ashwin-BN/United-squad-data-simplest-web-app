@@ -1,0 +1,37 @@
+Assignment: Building a Simple Web Application with AJAX, JSON, and APIs
+=======================================================================
+
+* Objectives:
+------------
+1. Understand the structure and usage of JSON in web applications.
+2. Learn the basics of Web APIs, their implementation, and interaction.
+3. Explore AJAX for creating dynamic and responsive web pages.
+
+
+* Tasks:
+-------
+1. JSON Data Creation: Create a JSON file named data.json that contains at least 10 entries of sample data relevant to a topic of your choice (e.g., products, users, messages). Each entry should include at least 3 properties
+
+
+2. Web API Introduction & Implementation:
+	- Develop a simple RESTful API using Node.js and Express that serves the JSON data created in task 1.
+	- Implement two endpoints: /api/data to retrieve all entries and /api/data/:id to retrieve a single entry by id.
+
+
+* AJAX Review:
+-----------
+	- Create an HTML page that uses AJAX to fetch and display data from your API without refreshing the page. You'll probably want to also create a ROUTE for your html page in the same Node/Express program you created about for the API
+
+	- Implement two main features:A "Load All Data" button that retrieves and displays all entries from the /api/data endpoint.
+
+	- An input field where users can enter an id to fetch a specific entry from the /api/data/:id endpoint and display it.
+
+	- Enhance the user interface with CSS for better presentation.
+
+	- Add error handling in your AJAX calls to manage situations like non-existent ids or server issues.
+
+
+* Submission Requirements:
+-------------------------
+- Source code for the JSON file, backend API, and the HTML page with AJAX.
+- A brief README file documenting your design choices, any challenges faced, and how you tested your application.

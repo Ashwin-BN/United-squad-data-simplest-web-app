@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Man United Squad</title>
+    <link rel="stylesheet" href="/style.css">
+
+    <script>
+        // Function to load all data of players
+        function loadAllData() {
+        fetch("/api/data")
+        .then((response) => response.json())
+        .then((json) => {
+            displayData(json);
+        });
+    }
+
+    // Function to load data of a player by their jersey number
+    function loadDataByJerseyNo() {
+        const jerseyNoInput = document.getElementById("playerId").value;
+            
+            fetch(`/api/data/${jerseyNoInput}`)
+            .then((response) => response.json())
+            .then((player) => {
+
+                displayData([player]);
+            })
+            .catch((error) => {
+                // Displaying a message indicating that the player with the entered jersey is not found
+                console.error('Error fetching data:', error);
+                var element = document.getElementById("output");
+                element.textContent = "Player with Jersey Number " + jerseyNoInput + " not found.";
+            });
+    }
+
+    // Function to display data of players on the web page
+    function displayData(data) {
+            var element = document.getElementById("output");
+            element.innerHTML = " ";
+            data.forEach(player => {
+                const div = document.createElement('div');
+                div.innerHTML = `<p>Name: ${player.name}</p>
+                                 <p>Jersey No: ${player.jerseyNo}</p>
+                                 <p>Position: ${player.position}</p>
+                                 <p>Country: ${player.country}</p> <br>`;
+                element.appendChild(div);
+            });
+    }
+    </script>
+    
+</head>
+<body>
+    <h1>Football Players</h1>
+    
+    <!-- Get All Users -->
+    <button type="button" onclick='loadAllData()'>Load All Data</button><br /><br />
+    <!-- Input field for Jersey Number -->
+    <input type="text" id="playerId" placeholder="Enter Jersey Number">
+    <!-- Load Data By jerseyNo -->
+    <button type="button" onclick='loadDataByJerseyNo()'>Load Data By jerseyNo</button><br /><br />
+    
+    <div id="output"></div>
+
+</body>
+</html>
+
+
+
+
